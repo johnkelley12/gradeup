@@ -20,9 +20,12 @@ export default function RootLayout({
             <Link href="/" className="text-2xl font-black tracking-tight" style={{ color: "#22c55e" }}>
               GradeUp
             </Link>
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-6">
               <Link href="/products" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
                 Products
+              </Link>
+              <Link href="/dashboard" className="text-gray-500 hover:text-gray-300 transition-colors text-sm font-medium">
+                Dashboard
               </Link>
               <Link href="/products" className="px-4 py-2 rounded-lg text-sm font-bold text-black transition-all hover:opacity-90" style={{ background: "#22c55e" }}>
                 Shop Now
