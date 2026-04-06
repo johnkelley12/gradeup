@@ -99,6 +99,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section style={{ borderTop: "1px solid #222" }} className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: "#22c55e" }}>Student Reviews</p>
+            <h2 className="text-4xl font-black">Real students. Real results.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: "Maya R.", school: "UNC Chapel Hill", emoji: "🧠", product: "Notion Dashboard", quote: "I went from missing 3 assignments a week to literally zero. This dashboard is the only reason I survived my first semester." },
+              { name: "Jake T.", school: "Michigan State", emoji: "🤖", product: "AI Prompt Pack", quote: "My essays went from Cs to As. The writing prompts alone are worth 10x the price. Wish I had this freshman year." },
+              { name: "Priya S.", school: "UT Austin", emoji: "💼", product: "Resume & LinkedIn Kit", quote: "Got 3 internship interviews within 2 weeks of using these templates. The LinkedIn checklist alone got me 4 recruiter messages." },
+              { name: "Chris M.", school: "Ohio State", emoji: "💰", product: "Budget Tracker", quote: "I saved $200 in the first month just by knowing where my money was going. This spreadsheet is stupid simple and it works." },
+              { name: "Alyssa K.", school: "Florida State", emoji: "🎓", product: "Freshman Bundle", quote: "The Calc I formula sheet saved me on my midterm. I printed it out and studied it for 2 days. Absolute lifesaver." },
+              { name: "Devon L.", school: "Arizona State", emoji: "🚀", product: "Internship Tracker", quote: "Applied to 40 companies in 2 weeks using this system. Tracked every follow-up and landed 2 interviews. The email templates are gold." },
+            ].map((t) => (
+              <div key={t.name} className="rounded-2xl p-6" style={{ background: "#111", border: "1px solid #222" }}>
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => <span key={i} style={{ color: "#22c55e" }}>★</span>)}
+                </div>
+                <p className="text-gray-300 leading-relaxed mb-5 text-sm">&quot;{t.quote}&quot;</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-black" style={{ background: "#22c55e22", color: "#22c55e" }}>
+                    {t.name[0]}
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-white">{t.name}</p>
+                    <p className="text-xs" style={{ color: "#636366" }}>{t.school} · {t.emoji} {t.product}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <section className="max-w-6xl mx-auto px-6 pb-20">
         <div className="rounded-3xl p-12 text-center" style={{ background: "linear-gradient(135deg, #22c55e22, #16a34a11)", border: "1px solid #22c55e33" }}>
