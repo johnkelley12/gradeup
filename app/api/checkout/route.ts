@@ -28,6 +28,7 @@ export async function POST(req: NextRequest) {
       },
     ],
     mode: "payment",
+    metadata: { slug },
     success_url: `${req.headers.get("origin")}/success?product=${slug}`,
     cancel_url: `${req.headers.get("origin")}/products/${slug}`,
   });
