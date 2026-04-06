@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { products, getProduct } from "@/lib/products";
 import { notFound } from "next/navigation";
+import BuyButton from "./BuyButton";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -34,9 +35,7 @@ export default async function ProductPage(props: PageProps<"/products/[slug]">) 
             </span>
           </div>
 
-          <button className="w-full py-4 rounded-xl text-lg font-black text-black transition-all hover:opacity-90 hover:scale-105 mb-4" style={{ background: "#22c55e" }}>
-            Buy Now — ${product.price}
-          </button>
+          <BuyButton slug={slug} price={product.price} />
           <p className="text-center text-gray-500 text-sm">⚡ Instant digital delivery · 30-day money back guarantee</p>
         </div>
 
